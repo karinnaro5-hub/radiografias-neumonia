@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detector de Neumonía en Radiografías</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="app__header">
+      <h1>Análisis de Radiografías de Tórax</h1>
+      <p>Sube una radiografía en formato PNG o JPG y el modelo indicará si detecta signos de neumonía viral.</p>
+    </header>
+
+    <main class="card">
+
+      <form id="upload-form">
+
+        <label for="file-input" class="drop-zone" id="drop-zone">
+          <img id="preview" class="drop-zone__preview" alt="" hidden>
+          <div class="drop-zone__placeholder" id="drop-zone-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 16V4m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Arrastra una imagen aquí o haz clic para seleccionarla</span>
+            <span class="drop-zone__hint">PNG o JPG, máx. 5&nbsp;MB</span>
+          </div>
+        </label>
+
+        <input type="file" id="file-input" name="imagen" accept="image/png, image/jpeg" hidden>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" disabled>Analizar radiografía</button>
+          <button type="button" id="reset-btn" class="secondary" hidden>Elegir otra imagen</button>
+        </div>
+
+      </form>
+
+      <div id="loading" class="status status--loading" hidden>
+        <span class="spinner" aria-hidden="true"></span>
+        Analizando imagen…
+      </div>
+
+      <div id="error" class="status status--error" hidden></div>
+
+      <div id="result" class="result" hidden>
+        <span id="result-badge" class="badge"></span>
+        <p id="result-confidence" class="result__confidence"></p>
+        <p id="result-raw" class="result__raw"></p>
+      </div>
+
+    </main>
+
+    <footer class="app__footer">
+      <p>Este resultado es generado por un modelo automático y tiene fines educativos. No reemplaza el diagnóstico de un profesional médico.</p>
+    </footer>
+
+  </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

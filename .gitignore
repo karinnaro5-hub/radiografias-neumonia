@@ -1,0 +1,12 @@
+# Entorno virtual
+.venv/
+
+# Cache de Python
+__pycache__/
+*.pyc
+
+# Dataset de entrenamiento (no necesario para correr la app)
+dataset/
+
+# Sistema
+.DS_Store

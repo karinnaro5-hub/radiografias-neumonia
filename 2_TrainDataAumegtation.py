@@ -16,7 +16,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 # ├── Normal/
 # └── Viral_Pneumonia/
 
-ruta_dataset = "M2/Clase8/dataset/"
+ruta_dataset = "dataset/"
 
 # Tamaño que espera la CNN.
 tamaño_imagen = (128, 128)
@@ -185,7 +185,7 @@ historial = modelo.fit(
 # ------------------------------------------------------------
 
 modelo.save(
-    "M2/Clase8/cnn_radiografias.keras"
+    "cnn_radiografias.keras"
 )
 
 print("\nMODELO GUARDADO CORRECTAMENTE")

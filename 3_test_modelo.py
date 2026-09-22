@@ -8,10 +8,10 @@ from tensorflow.keras.preprocessing import image
 # ------------------------------------------------------------
 
 # Ruta del modelo entrenado.
-ruta_modelo = "M2/Clase8/cnn_radiografias.keras"
+ruta_modelo = "cnn_radiografias.keras"
 
 # Ruta de la radiografía que queremos probar.
-ruta_imagen = "M2/Clase8/radiografia_prueba.png"
+ruta_imagen = "radiografia_prueba.png"
 
 # Tamaño utilizado durante el entrenamiento.
 tamaño_imagen = (128, 128)

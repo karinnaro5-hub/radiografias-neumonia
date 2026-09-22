@@ -139,21 +139,17 @@ print(probabilidad)
 #
 # print(train_gen.class_indices)
 #
-# Por ejemplo:
+# Confirmado en uso real (invertido respecto al ejemplo original):
 #
-# {'Normal': 0, 'Viral Pneumonia': 1}
-#
-# En ese caso:
-#
-# valores cercanos a 0 → Normal
-# valores cercanos a 1 → NormalViral
+# valores cercanos a 0 → Viral Pneumonia
+# valores cercanos a 1 → Normal
 
 
 if probabilidad >= 0.5:
 
     confianza = probabilidad * 100
 
-    print("\nRESULTADO: VIRAL PNEUMONIA")
+    print("\nRESULTADO: NORMAL")
     print(
         "CONFIANZA:",
         round(confianza, 2),
@@ -164,7 +160,7 @@ else:
 
     confianza = (1 - probabilidad) * 100
 
-    print("\nRESULTADO: NORMAL")
+    print("\nRESULTADO: VIRAL PNEUMONIA")
     print(
         "CONFIANZA:",
         round(confianza, 2),

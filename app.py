@@ -15,9 +15,10 @@ RUTA_MODELO = os.path.join(BASE_DIR, "cnn_radiografias.keras")
 TAMANO_IMAGEN = (128, 128)
 EXTENSIONES_PERMITIDAS = {"png", "jpg", "jpeg"}
 
-# Orden de clases usado durante el entrenamiento
-# (ver comentario en 3_test_modelo.py).
-ETIQUETAS = {0: "Normal", 1: "Viral Pneumonia"}
+# Orden de clases usado durante el entrenamiento.
+# Invertido respecto al comentario original de 3_test_modelo.py:
+# confirmado en uso real que probabilidad >= 0.5 corresponde a "Normal".
+ETIQUETAS = {0: "Viral Pneumonia", 1: "Normal"}
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB por imagen
